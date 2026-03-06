@@ -16,9 +16,10 @@ const App = () => {
   const [currencies, setCurrencies] = useState([]);
   const [currencyId, setCurrencyId] = useState(1);
   const [currencyData, setCurrencyData] = useState(null);
+  const API_URL = import.meta.env.VITE_API_URL
 
   const fetchCurrencies = () => {
-    axios.get("http://127.0.0.1:8000/cryptocurrencies").then((r) => {
+    axios.get(`${API_URL}/cryptocurrencies`).then((r) => {
       const currenciesResponse = r.data;
       const menuItems: any = [
         getItem(
@@ -37,7 +38,7 @@ const App = () => {
 
   const fetchCurrency = () => {
     axios
-      .get(`http://127.0.0.1:8000/cryptocurrencies/${currencyId}`)
+      .get(`${API_URL}/cryptocurrencies/${currencyId}`)
       .then((r) => {
         setCurrencyData(r.data);
       });
