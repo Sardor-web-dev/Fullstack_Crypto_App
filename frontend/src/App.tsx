@@ -65,7 +65,7 @@ const App = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       <button
-        className="md:hidden fixed top-4 left-4 z-50 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg"
+        className="md:hidden cursor-pointer fixed top-4 left-4 z-50 bg-blue-500 text-white px-4 py-2 rounded-lg shadow-lg"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         ☰
